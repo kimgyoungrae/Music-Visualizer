@@ -1,5 +1,5 @@
 /**
- * Muisc Visualizer by Jason Kim
+ * Music Visualizer by Jason Kim
  * CSE 493F - Physical Computing
  * Spring 2026
  * 
