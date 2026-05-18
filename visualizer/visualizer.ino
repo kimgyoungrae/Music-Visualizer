@@ -267,18 +267,18 @@ void loop() {
       volumeLevel = parts[0].toInt();
       trackNumber = parts[1].toInt();
       totalTracks = parts[2].toInt();
-      elapsedSec  = parts[3].toInt();
+      elapsedSec = parts[3].toInt();
       durationSec = parts[4].toInt();
-      playing     = parts[5].toInt() == 1;
+      playing = parts[5].toInt() == 1;
 
       String full = parts[6];
       int dash = full.indexOf(" - ");
 
       if (dash != -1) {
-        artist    = full.substring(0, dash);
+        artist = full.substring(0, dash);
         songTitle = full.substring(dash + 3);
       } else {
-        artist    = "";
+        artist = "";
         songTitle = full;
       }
     }
