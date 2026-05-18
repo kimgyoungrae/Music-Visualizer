@@ -1,0 +1,45 @@
+<!--
+  Music Visualizer by Jason Kim
+  CSE 493F - Physical Computing
+  Spring 2026
+
+  Beautifully visualizes music playing on the user's computer with a colorful physical interface and display. The
+  potentiometer controls the volume, which is visualized on the NeoPixel strip. The OLED display shows the
+  current track information and progress. The button allows toggling between play/pause and skipping to the next track,
+  with accompanying chime sounds from the buzzer.
+
+  Credit to Dr. Froehlich and the Interactive Physical Computing Textbook
+  (including the template code for the project):
+  https://makeabilitylab.github.io/physcomp/
+
+  Gemini was used to assist with debugging with the project with button and visualization issues.
+
+  Hardware:
+    - Adafruit ESP32-S3 Feather (2MB PSRAM)
+    - SSD1306 128x64 OLED display (for Visual I/O feedback)
+    - NeoPixel LED strip (for Visual I/O feedback)
+    - Piezo Buzzer (for Audible I/O feedback)
+    - Buttons (for Play/Pause and Next Track)
+    - Sliding Potentiometer (for Volume Control)
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Music Visualizer</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/addons/p5.sound.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/makeabilitylab/p5js/_libraries/serial.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="controls">
+    <button id="serialBtn" onclick="onSerialConnectButtonClicked()">Connect Serial</button>
+    <button id="fileBtn">Load MP3</button>
+    <input type="file" id="fileInput" accept=".mp3">
+    <button id="playBtn" disabled>Play / Pause</button>
+  </div>
+  <div id="canvas-container"></div>
+  <script src="sketch.js"></script>
+</body>
+</html>
