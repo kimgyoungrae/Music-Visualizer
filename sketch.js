@@ -92,14 +92,14 @@ function onSerialErrorOccurred(eventSender, error) {
 
 
 /**
- * Called whenever a new line of data arrives from the Arduino over Serial.
+ * Called whenever a new line of data arrives from the ESP32 over Serial.
  * Parses the CSV for potVal, playPauseVal, nextSongVal.
  * Detects rising edges on each button value and fires togglePlayPause() or
  * nextSong() if the corresponding cooldown has elapsed.
- * Ignores lines starting with '#' (debug comments from the Arduino).
+ * Ignores lines starting with '#' (debug comments from the ESP32).
  *
  * @param {Serial} eventSender - the serial object that fired the event
- * @param {string} newData - the raw string received from the Arduino
+ * @param {string} newData - the raw string received from the ESP32
  */
 function onSerialDataReceived(eventSender, newData) {
   if (newData.startsWith('#')) return;
@@ -132,7 +132,7 @@ function onSerialDataReceived(eventSender, newData) {
 }
 
 /**
- * Sends the current playback state back to the Arduino over Serial.
+ * Sends the current playback state back to the ESP32 over Serial.
  * Format: "volume,trackNum,totalTracks,elapsed,duration,playing,Artist - Title"
  * Does nothing if the serial port is not open.
  */
